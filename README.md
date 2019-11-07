@@ -7,7 +7,7 @@ It is expected that a service named `raspotify` is registered on the raspberry p
 
 ## Install
 
-Copy the deploy script and change the variables `RASPBERRY_PASSWORD` and `RASPBERRY_HOST` as needed for your setup.
+Copy the deploy script and change the variables `RASPBERRY_PASSWORD` and `RASPBERRY_HOST` as needed for your setup: `mv deploy.example.sh deploy.sh`
 
 On the raspberry pi, install node and yarn:
 
