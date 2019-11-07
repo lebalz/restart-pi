@@ -1,0 +1,10 @@
+{
+  "name": "restart-pi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Balz <lebalz@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

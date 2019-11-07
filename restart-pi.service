@@ -1,0 +1,17 @@
+[Unit]
+Description=Restart Pi Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/yarn start
+
+StandardOutput=file:/home/pi/restart-pi/log.log
+StandardError=file:/home/pi/restart-pi/log.log
+Restart=always
+User=pi
+Group=pi
+Environment=NODE_ENV=production
+WorkingDirectory=/home/pi/restart-pi
+
+[Install]
+WantedBy=multi-user.target

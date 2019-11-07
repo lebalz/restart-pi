@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <h1>Restart Raspberry Pi</h1>
+  <form id="restart_raspotify" method="POST" action="/restart_raspotify">
+  </form>
+  <form id="restart_pi" method="POST" action="/restart">
+  </form>
+  <div class="buttons">
+    <button form="restart_pi" type="submit">
+      <img src="assets/images/restart.png" alt="restart">
+      <img src="assets/images/rspberry_pi.png" alt="restart raspberry">
+    </button>
+    <button form="restart_raspotify" type="submit">
+      <img src="assets/images/restart.png" alt="restart">
+      <img src="assets/images/spotify.svg" alt="restart raspotify">
+    </button>
+  </div>
+  <textarea id="log">Syslog</textarea>
+
+  <script>
+    window.onload = () => {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("log").value = this.responseText;
+          var textarea = document.getElementById('log');
+          textarea.scrollTop = textarea.scrollHeight;
+        }
+      };
+      xhttp.open("GET", "/syslog", true);
+      xhttp.send();
+    }
+  </script>
+</body>
+
+</html>
