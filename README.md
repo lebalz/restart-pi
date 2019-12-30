@@ -31,3 +31,16 @@ The app is deployed on port `3001`. Deploy the app with
 ```sh
 ./deploy.sh
 ```
+
+Or you can manually configure the service on the raspberry pi.
+
+1. Copy this project to the raspberry pi
+2. Open a terminal and `cd` to the project folder. (The command `ls` should output all the files and folders of the project)
+3. Run the following commands:
+
+```sh
+yarn install
+sudo systemctl restart restart-pi
+```
+
+Then you can visit the restart-website under the ip of your raspberry pi on the port 3001 (e.g. 192.168.1.12:3001)
