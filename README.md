@@ -1,6 +1,6 @@
 # Restart Pi
 
-An easy deployable node server for easily restarting [raspotify]() service on a raspberry pi.
+An easy deployable node server for easily restarting [raspotify](https://github.com/dtcooper/raspotify) service on a raspberry pi.
 It is expected that a service named `raspotify` is registered on the raspberry pi.
 
 ![Restart-PI](./public/assets/images/preview.png)
@@ -25,6 +25,8 @@ Create a new service `/etc/systemd/system/restart-pi.service` on the pi and copy
 the content of the file `restart-pi.service`. Then enable the service with `sudo systemctl enable restart-pi.service` and start it with `sudo systemctl start restart-pi.service`
 
 ## Deploy the app
+
+Make sure you have [sshpass](https://gist.github.com/arunoda/7790979) installed on your system
 
 The app is deployed on port `3001`. Deploy the app with
 
